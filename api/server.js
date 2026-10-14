@@ -300,7 +300,7 @@ app.post('/api/registrations', async (req, res, next) => {
         `, [b.event_id, b.user_name, b.user_email, b.contact_phone || null, b.registration_date, tickets]);
 
         res.status(201).json({
-            registration_id: result[0].insertId,
+            registration_id: result.insertId,
             message: 'Registration successful'
         });
     } catch (err) { next(err); }
